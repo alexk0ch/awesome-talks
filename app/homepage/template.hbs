@@ -1,8 +1,12 @@
 <ul class="talk-list">
   {{#each talk in model}}
   <li class="talk-badge">
-    talk.title
+    {{#link-to 'talk' talk.id}}
+      {{talk.title}}
+    {{/link-to}} 
   </li>
   {{/each}}
 </ul>
+
+
 {{outlet}}

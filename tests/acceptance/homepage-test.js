@@ -23,5 +23,11 @@ test('homepage', function(assert) {
   andThen(function() {
     //assert.equal(currentPath(), 'homepage');
     assert.equal(find('.talk-list .talk-badge').length, 3);
+    assert.equal(find('.talk-list .talk-badge:eq(0)').text().trim(), 'Ember in Action');
+    click('.talk-list .talk-badge:eq(0) a');
+    andThen(()=>{
+      assert.equal(currentPath(), 'talk');
+      assert.equal(currentURL(), '/talks/11');
+    });
   });
 });

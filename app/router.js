@@ -7,6 +7,7 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('homepage', { path: '/' });
+  this.route('talk', { path: 'talks/:talks_id'});
 });
 
 export default Router;
