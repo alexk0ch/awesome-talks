@@ -1,0 +1,10 @@
+<form {{action 'login' username on='submit'}}>
+  <p>
+    <label for="input-username">Username</label>
+    {{input type="text" id="input-username" value=username}}
+  </p>
+  <p>
+    <input type="submit" value="Login"/>
+  </p>
+</form>
+{{yield}}

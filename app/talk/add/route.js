@@ -5,7 +5,7 @@ export default Ember.Route.extend({
   beforeModel (transition) {
     if (!this.session.get('isLoggedIn')) {
       this.session.set('attemptedTransition', transition);
-      this.transitionTo('/login');
+      this.transitionTo('login');
     }
   }
   
