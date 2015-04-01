@@ -1,2 +1,16 @@
 @import 'includes/bootstrap/css/bootstrap.min.css';
 @import 'includes/bootstrap/css/simple-sidebar.css';
+
+.talk-badge.active {
+  background: #FFFFFF;
+  color: #000000;
+}
+
+.talk-badge.active a:hover {
+  color: black;
+}
+
+.intro .img-responsive {
+  margin: 10px auto;
+  max-height: 200px;
+}

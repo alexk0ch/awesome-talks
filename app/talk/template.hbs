@@ -1,7 +1,16 @@
+<ol class="breadcrumb">
+  <li>
+    {{#link-to 'homepage'}}
+      Welcome to EmberJS
+    {{/link-to}}
+  </li>
+  <li class="active">Talk # {{model.id}} | {{model.title}}</li>
+</ol>
+
 <h2 class="talk-title">{{model.title}}</h2>
 <div class="talk-content row">
   {{#each section in model.content}}  
-    <div class="col-md-4 col-lg-4 col-sm-6 col-xs-6">
+    <div class="col-md-4 col-lg-4">
       <p>{{section}}</p>
     </div>
   {{/each}}

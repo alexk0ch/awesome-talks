@@ -1,4 +1,24 @@
 <div class="container-fluid">
-  {{outlet}}
+  <div class="sidebar-wrapper">
+    <div class="sidebar-inner-wrapper">
+      <ul class="sidebar-nav talk-list">
+        <li class="sidebar-brand">
+          {{#link-to 'homepage'}}
+            Welcome to EmberJS
+          {{/link-to}}
+        </li>
+        {{#each talk in model}}
+          {{#link-to 'talk' talk.id tagName="li" class="talk-badge"}}
+            <a href="/talks/{{talk.id}}">
+              {{talk.title}}
+            </a>
+          {{/link-to}} 
+        {{/each}} 
+      </ul>
+    </div>
+    <div id="page-content-wrapper">
+      {{outlet}}
+    </div>
+  </div> 
 </div>
       

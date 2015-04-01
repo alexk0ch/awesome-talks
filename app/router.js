@@ -6,8 +6,7 @@ var Router = Ember.Router.extend({
 });
 
 export default Router.map(function() {
-  this.resource('homepage', { path: '/' }, function () {
-    this.resource('talk', {path: '/talks/:id'});    
-  });  
+  this.resource('homepage', { path: '/' });  
+  this.resource('talk', {path: '/talks/:id'});
 }); 
   

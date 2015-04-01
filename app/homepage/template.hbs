@@ -1,24 +1,9 @@
-<div class="sidebar-wrapper">
-  
-  <div class="sidebar-inner-wrapper">
-    <ul class="sidebar-nav talk-list">
-      <li class="sidebar-brand">
-        {{#link-to 'homepage'}}
-          Home
-        {{/link-to}}
-      </li>
-      {{#each talk in model}}
-        <li class="talk-badge">
-        {{#link-to 'talk' talk.id}}
-          {{talk.title}}
-        {{/link-to}} 
-        </li>
-      {{/each}}      
-    </ul>
-  </div>
-
-  <div id="page-content-wrapper">
-    {{outlet}}
-  </div>
-
-</div> 
+<div class="row intro">
+  {{#each topic in model}}
+    <div class="col-md-4 col-lg-4 text-center">
+      <h1>{{topic.title}}</h1>
+      <img class="img-responsive" src="{{topic.url}}" alt="">
+    </div>
+  {{/each}}
+</div>
+{{outlet}}
