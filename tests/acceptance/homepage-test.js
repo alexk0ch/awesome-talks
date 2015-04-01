@@ -28,6 +28,7 @@ test('homepage', function(assert) {
     andThen(()=>{
       assert.equal(currentPath(), 'talk');
       assert.equal(currentURL(), '/talks/11');
+      assert.equal(find('.talk-title').text().trim(), 'Ember in Action');
     });
   });
 });
