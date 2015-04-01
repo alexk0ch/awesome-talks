@@ -26,8 +26,8 @@ test('homepage', function(assert) {
     assert.equal(find('.talk-list .talk-badge:eq(0)').text().trim(), 'Ember in Action');
     click('.talk-list .talk-badge:eq(0) a');
     andThen(()=>{
-      assert.equal(currentPath(), 'talk');
-      assert.equal(currentURL(), '/talks/11');
+      assert.equal(currentPath(), 'homepage.talk');
+      assert.equal(currentURL(), '/talks/1');
       assert.equal(find('.talk-title').text().trim(), 'Ember in Action');
     });
   });
