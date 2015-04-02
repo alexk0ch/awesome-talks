@@ -7,7 +7,7 @@ import startApp from 'awesome-talks/tests/helpers/start-app';
 
 var application;
 
-module('Acceptance: Talk.Add', {
+module('Acceptance: Talk.Add.Transitions', {
   beforeEach: function() {
     application = startApp();
   },

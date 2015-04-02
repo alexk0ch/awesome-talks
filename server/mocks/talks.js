@@ -45,8 +45,6 @@ module.exports = function(app) {
     newTalk.id = mockData.length + 1;
     mockData.push(newTalk);
 
-    console.log(newTalk.content)
-
     res.send({
       'talks' : newTalk
     })
@@ -67,8 +65,12 @@ module.exports = function(app) {
   });
 
   talksRouter.delete('/:id', function(req, res) {
-    res.status(204).end();
+    mockData.splice(req.params.id-1, 1);
+    res.send({
+      'ok':'ok'
+    })
   });
+
 
   app.use('/api/talks', talksRouter);
 };
