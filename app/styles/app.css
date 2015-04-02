@@ -1,6 +1,10 @@
 @import 'includes/bootstrap/css/bootstrap.min.css';
 @import 'includes/bootstrap/css/simple-sidebar.css';
 
+body {
+  max-width: 100%;
+}
+
 .talk-badge.active {
   background: #FFFFFF;
   color: #000000;
@@ -13,4 +17,8 @@
 .intro .img-responsive {
   margin: 10px auto;
   max-height: 200px;
+}
+
+#ember-testing-container {
+  left: 0;
 }

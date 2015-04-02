@@ -22,7 +22,6 @@ test('homepage', function(assert) {
 
   andThen(function() {
     assert.equal(find('.sidebar-brand a').text().trim(), 'Home');
-    assert.equal(find('.talk-list .talk-badge').length, 3);
     click('.talk-list .talk-badge:eq(0) a');
     andThen(() => {
       assert.equal(currentURL(), '/talks/1');

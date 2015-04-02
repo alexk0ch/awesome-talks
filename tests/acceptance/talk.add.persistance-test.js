@@ -24,9 +24,12 @@ test('Talk.Add should persist data on server and redirect you to new route', fun
   fillIn('#input-username', 'Alex');
   click('input[type=submit]');
 
+  var totalTalks;
+
   andThen(function() {
     assert.equal(currentURL(), '/');
     visit('/talks/add');
+    totalTalks = find('.talk-badge').length;
 
     fillIn('#input-title', 'New Talk');
     fillIn('#input-content', 'New Content \nNew Content');
@@ -34,7 +37,7 @@ test('Talk.Add should persist data on server and redirect you to new route', fun
 
     andThen(() => {
       assert.equal(/talks/.test(currentURL()), true);
-      assert.equal(find('.talk-badge').length, 4);
+      assert.equal(find('.talk-badge').length, totalTalks + 1);
       $.ajax({
         url: 'http://localhost:4200/api/talks/' + currentURL().split('/').pop(),
         type: 'DELETE'
