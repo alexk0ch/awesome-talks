@@ -1,0 +1,12 @@
+<form {{action 'addTalk' title content on='submit'}}>
+  <div class="form-group">
+    <label for="input-title">Title</label>
+    {{input type="text" id="input-title" class="form-control" value=title}}
+  </div>
+  <div class="form-group">
+    <label for="input-content">Content</label>
+    {{textarea type="text" id="input-content" class="form-control" value=content}}
+  </div>
+  <input type="submit" value="Add Talk" class="btn btn-default"/>
+</form>
+{{yield}}

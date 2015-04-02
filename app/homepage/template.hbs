@@ -1,9 +1,10 @@
-<div class="row intro">
-  {{#each topic in model}}
-    <div class="col-md-4 col-lg-4 text-center">
-      <h1>{{topic.title}}</h1>
-      <img class="img-responsive" src="{{topic.url}}" alt="">
-    </div>
-  {{/each}}
+<div class="jumbotron">
+  <h1>Welcome to Awesome Talks!</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, corporis, dolores? Cum nulla maiores est. Esse ut eius aliquam, nesciunt sapiente, totam voluptas, iusto molestiae eos sed quia officiis. Aspernatur!</p>
+  <p>
+    {{#link-to 'talk.add' class="btn btn-primary btn-lg"}}
+      Add New Talk
+    {{/link-to}}
+  </p>
 </div>
 {{outlet}}

@@ -1,6 +1,10 @@
 module.exports = function(app) {
   var express = require('express');
   var talksRouter = express.Router();
+  var bodyParser = require('body-parser');
+
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({ extended: true }));
 
   var mockData = [
     {
@@ -37,7 +41,15 @@ module.exports = function(app) {
   });
 
   talksRouter.post('/', function(req, res) {
-    res.status(201).end();
+    var newTalk = req.body.talk;
+    newTalk.id = mockData.length + 1;
+    mockData.push(newTalk);
+
+    console.log(newTalk.content)
+
+    res.send({
+      'talks' : newTalk
+    })
   });
 
   talksRouter.get('/:id', function(req, res) {
