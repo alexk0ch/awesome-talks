@@ -21,14 +21,20 @@ test('homepage', function(assert) {
   visit('/');
 
   andThen(function() {
-    //assert.equal(currentPath(), 'homepage');
+    assert.equal(find('.sidebar-brand a').text().trim(), 'Home');
     assert.equal(find('.talk-list .talk-badge').length, 3);
-    assert.equal(find('.talk-list .talk-badge:eq(0)').text().trim(), 'Ember in Action');
     click('.talk-list .talk-badge:eq(0) a');
-    andThen(()=>{
-      assert.equal(currentPath(), 'talk');
+    andThen(() => {
       assert.equal(currentURL(), '/talks/1');
-      assert.equal(find('.talk-title').text().trim(), 'Ember in Action');
     });
+  });
+});
+
+test('homepage to talk.add navigation exists', function (assert) {
+  visit('/');
+
+  andThen(function() {
+    let toTalkAddButton = find('.jumbotron .btn.btn-primary.btn-lg');
+    assert.equal(toTalkAddButton.length, 1);
   });
 });

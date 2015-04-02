@@ -11,8 +11,8 @@ export default Ember.Route.extend({
 
   actions: {
     addTalk (newTalk) {
-      var newTalkRecord = this.store.createRecord('talk', newTalk);
-      newTalkRecord.save().then(() => { this.transitionTo('talk', newTalkRecord) })
+      let newTalkRecord = this.store.createRecord('talk', newTalk);
+      newTalkRecord.save().then(() => { this.transitionTo('talk', newTalkRecord); });
     }
   }
   
